@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lecture 1</h1>
+
+    <h2>Variables</h2>
+
+    <p>Learn how to declare variables and what the differences between these methods are?</p>
+
+    <h3>var vs let vs const</h3>
+
+    <h4>var</h4>
+    <ul>
+        <li><code>var</code> declarations are function-scoped or globally scoped.</li>
+        <li>They can be re-declared and updated within their scope.</li>
+        <li>They can be hoisted to the top of their scope.</li>
+    </ul>
+
+    <h4>let</h4>
+    <ul>
+        <li><code>let</code> declarations are block-scoped.</li>
+        <li>They cannot be re-declared within the same scope.</li>
+        <li>They can be updated within their scope.</li>
+        <li>They are not hoisted to the top of their scope.</li>
+    </ul>
+
+    <h4>const</h4>
+    <ul>
+        <li><code>const</code> declarations are block-scoped.</li>
+        <li>They cannot be re-declared or reassigned within the same scope.</li>
+        <li>However, if the value is an object or array, properties or elements of that object or array can be mutated.
+        </li>
+    </ul>
+
+    <h3>Primitive vs Non-Primitive Values</h3>
+
+    <ul>
+        <li><strong>Primitive types</strong>: string, number, bigint, boolean, undefined, and null.</li>
+        <li><strong>Non-primitive</strong> values include <strong>objects, arrays, functions</strong>, and other objects
+            derived from Object.</li>
+    </ul>
+
+    <h4>Mutability</h4>
+    <p>Primitive values are immutable, meaning their values cannot be changed. Non-primitive values are mutable, meaning
+        their values can be changed.</p>
+
+    <h4>Storage</h4>
+    <p>Primitive values are stored directly in memory. Non-primitive values are stored as references in memory, and
+        variables hold references to their locations.</p>
+
+    <h4>Equality</h4>
+    <p>Primitive values are compared by value, meaning two values are equal if they have the same value. Non-primitive
+        values are compared by reference, meaning two variables are equal only if they reference the same object in
+        memory.</p>
+
+    <h2>Functions</h2>
+
+    <h3>Declaring Functions in JS</h3>
+
+    <h4>Function Declaration</h4>
+    <pre><code>function greet() {
+  console.log("Hello!");
+}
+</code></pre>
+
+    <h4>Function Expression</h4>
+    <pre><code>const greet = function() {
+  console.log("Hello!");
+};
+</code></pre>
+
+    <h4>Arrow Function Expression</h4>
+    <pre><code>const greet = () => {
+  console.log("Hello!");
+};
+</code></pre>
+
+    <h2>Arrays</h2>
+
+    <ul>
+        <li>Declare Array</li>
+        <li>Modify Array</li>
+        <li>Copying Array</li>
+        <li>Array Destructuring</li>
+        <li>Array Spread Operator</li>
+        <li>Looping Through Array</li>
+        <li>Array Methods</li>
+    </ul>
+
+    <h2>Objects</h2>
+
+    <ul>
+        <li>Declaring Objects</li>
+        <li>Assigning Object to Object</li>
+        <li>Modifying Objects</li>
+        <li>Copying Object</li>
+        <li>Spread Operator</li>
+        <li>Object Destructuring</li>
+        <li>Object keys, values, entries, assign</li>
+        <li>Looping through an object</li>
+    </ul>
+
+    <!-- <script src="./files/varLetConst.js"></script> -->
+    <!-- <script src="./files/hoisting.js"></script> -->
+    <!-- <script src="./files/primitiveAndNon.js"></script> -->
+    <!-- <script src="./files/functions.js"></script> -->
+    <!-- <script src="./files/array.js"></script> -->
+    <script src="./files/objects.js"></script>
+</body>
+
+</html>
