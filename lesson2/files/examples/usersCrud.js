@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", ()=> {
 
 
   const userForm = document.getElementById("userForm");
@@ -9,29 +9,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to add a new user to the table
   function addUser(firstName, lastName, email) {
+
     const newRow = document.createElement("tr");
+
     newRow.id = `user-${userCount + 1}`
-    newRow.innerHTML = `
+
+    newRow.innerHTML =
+     `
         <th scope="row">${++userCount}</th>
         <td>${firstName}</td>
         <td>${lastName}</td>
         <td>${email}</td>
         <td><button class="btn btn-danger btn-sm delete-btn">Delete</button></td>
-
       `;
+
+
     userTable.appendChild(newRow);
   }
 
   // Event listener for form submission
   userForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission behavior
 
-    // Get form inputs
+    event.preventDefault(); // Prevent default form submission behavior
+   console.log(event.target)
+
+    
+    // // Get form inputs
     const firstNameInput = document.getElementById("firstName");
     const lastNameInput = document.getElementById("lastName");
     const emailInput = document.getElementById("email");
 
-    // Get values from inputs
+    // // Get values from inputs
     const firstName = firstNameInput.value.trim();
     const lastName = lastNameInput.value.trim();
     const email = emailInput.value.trim();
@@ -65,10 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   function deleteUser(rowId) {
-    console.log(userTable)
+ 
+ 
     const rowElement = userTable.querySelector("#" + rowId)
-    userTable.removeChild(rowElement);
-    userCount--; // Decrement user count when a row is deleted
+    const confirmed = confirm(`user ${rowId} will be deleted !`)
+    
+    if (confirmed) {
+      userTable.removeChild(rowElement);
+      userCount--; // Decrement user count when a row is deleted
+    }
   }
 
 });

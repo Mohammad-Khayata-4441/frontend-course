@@ -2,6 +2,8 @@
 
 // Accessing string by index and charAt
 const str = "Hello, world!";
+
+
 console.log("Character at index 7:", str[7]); // accessing by index
 console.log("Character at index 7 (charAt):", str.charAt(7)); // using charAt
 
@@ -36,7 +38,7 @@ console.log("Slice:", slicedStr);
 // Convert string to array
 
 // split
-const strToArray = str.split(", ");
+const strToArray = str.split(" ");
 console.log("String to Array:", strToArray);
 
 // Convert arrays to strings
