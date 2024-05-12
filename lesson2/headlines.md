@@ -75,3 +75,17 @@
   - accepted data types in json object
 
   - parsing and stringifying JSON data
+
+## Vite , bundlers and package managers
+
+### Bundlers
+
+- Create Project With Vite
+- Understanding Bundler
+- 
+
+### Npm (Package Manager)
+
+- ## What is package (Modules)
+- ## Package.json
+- ## What are node_modules

@@ -6,26 +6,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function loadUsers() {
 
-          fetch(GET_USERS_API).then((result) => {
+        fetch(GET_USERS_API).then(
+            (result) => {
+           console.log('After Then',result)
+
+
             result.json().then(
-                
                 (users) => {
-                renderUsers(
-                    users.map((user) => {
 
-                        
-                        const [firstName, lastName] = user.name.split(" ");
-                        const email = user.email;
+                    renderUsers(
+                        users.map((user) => {
 
-                        return {
-                            firstName: firstName,
-                            lastName: lastName,
-                            email: email,
-                        };
-                    })
-                );
-            }).catch(()=>{});
-        });
+
+                            const [firstName, lastName] = user.name.split(" ");
+                            const email = user.email;
+
+                            return {
+                                firstName: firstName,
+                                lastName: lastName,
+                                email: email,
+                            };
+                        })
+                    );
+                }).catch(() => {
+                    console.log('An Error Occured !')
+                });
+        }
+    
+    
+    );
+
+        // console.log('After fetch', res)
 
 
     }
