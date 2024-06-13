@@ -6,27 +6,39 @@ import { setPosts, } from '../store/posts';
 import PostsForm from './postsForm';
 
 const PostsComponent: React.FC = () => {
+
+    // const [postState , setPostsState] = useState([])
+
     const dispatch = useAppDispatch();
+
     const posts = useAppSelector((state) => state.posts.posts);
+
+
     const [loading, setLoading] = useState(false);
     const [showForm, setShowForm] = useState(false)
+
+    const fetchData = async () => {
+        setLoading(true);
+        try {
+            const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+            const data = response.data;
+
+
+
+            dispatch(setPosts(data));
+
+            setLoading(false);
+
+        } catch (err) {
+            setLoading(false);
+        }
+    };
+
     useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true);
-            try {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-
-                dispatch(setPosts(response.data));
-
-                setLoading(false);
-
-            } catch (err) {
-                setLoading(false);
-            }
-        };
 
         fetchData();
-    }, [dispatch]);
+
+    }, []);
     return <>
 
         {loading &&

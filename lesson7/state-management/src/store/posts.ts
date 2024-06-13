@@ -11,19 +11,21 @@ interface Post {
 
 interface PostsState {
     posts: Post[];
-    error: string | null;
 }
 
 const initialState: PostsState = {
     posts: [],
-    error: null,
 };
 
 const postsSlice = createSlice({
+
     name: 'posts',
     initialState,
+
     reducers: {
+
         setPosts(state, action: PayloadAction<Post[]>) {
+            
             state.posts = action.payload;
         },
 
